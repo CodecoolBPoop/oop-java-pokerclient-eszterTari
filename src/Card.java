@@ -22,11 +22,10 @@ public class Card {
         }
 
         String cardValue = cardCode.substring(1).toUpperCase();
-        Integer intCardValue;
+        Integer intCardValue = Integer.parseInt(cardValue);
 
         if (alphabeticCardValue.get(cardCode.substring(1).toUpperCase()) == null) {
             // raises exception if cardValue is a letter, but not J/Q/K/A
-            intCardValue = Integer.parseInt(cardValue);
             if (intCardValue > 10 || intCardValue < 2) {
                 throw new IllegalArgumentException("card number isn't valid: " + intCardValue);
             }
@@ -34,7 +33,6 @@ public class Card {
     }
 
     public int getValue() {
-
         String cardValue = cardCode.substring(1).toUpperCase();
         Integer intCardValue;
 
